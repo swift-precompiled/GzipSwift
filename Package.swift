@@ -8,7 +8,7 @@ let package = Package(
     products: [
         .library(
             name: "Gzip",
-            targets: ["Gzip_PrecompiledProduct"]
+            targets: ["Gzip", "Gzip_PrecompiledProduct"]
         )
     ],
     targets: [
