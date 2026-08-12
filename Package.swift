@@ -15,12 +15,13 @@ let package = Package(
         .target(
             name: "Gzip_Aggregation",
             dependencies: ["Gzip"],
+            packageAccess: false,
             swiftSettings: [.define("SCIPIO_PRECOMPILED_BINARY_WRAPPER")]
         ),
         .binaryTarget(
             name: "Gzip",
-            url: "https://github.com/swift-precompiled/GzipSwift/releases/download/6.0.1/Gzip-47b59e48a7e7f7c11ea9c1d782e99df296efa7deb497f2ff82546edf7a21690b.xcframework.zip",
-            checksum: "47b59e48a7e7f7c11ea9c1d782e99df296efa7deb497f2ff82546edf7a21690b"
+            url: "https://github.com/swift-precompiled/GzipSwift/releases/download/6.0.1/Gzip-b2ca1546fda8f6e4ec446dd9f83762f80b014ec4cf8f7ced7ec7669fd4cb3ce0.xcframework.zip",
+            checksum: "b2ca1546fda8f6e4ec446dd9f83762f80b014ec4cf8f7ced7ec7669fd4cb3ce0"
         ),
         .target(
             name: "system-zlib",
@@ -30,7 +31,8 @@ let package = Package(
         ),
         .target(
             name: "Gzip_PrecompiledProduct",
-            dependencies: ["Gzip_Aggregation", "system-zlib"]
+            dependencies: ["Gzip_Aggregation", "system-zlib"],
+            packageAccess: false
         )
     ]
 )
